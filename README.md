@@ -55,19 +55,5 @@ Dinver Explorer je mobilna aplikacija izrađena pomoću React Native i Expo-a. A
 
 ---
 
-### **Kod za instalaciju i pokretanje**
-```bash
-# Klonirajte repozitorij
-git clone <repo-url>
-
-# Instalirajte ovisnosti
-npm install
-
-# Pokrenite aplikaciju
-npm start
-```
-
----
-
 ## Autor
 Aplikaciju je izradio **Toni Jelavić**.
