@@ -233,8 +233,8 @@ const styles = StyleSheet.create({
   },
   addressContainerCentered: {
     flex: 1,
-    alignItems: "center", // Centriranje horizontalno
-    justifyContent: "center", // Centriranje vertikalno
+    alignItems: "center", 
+    justifyContent: "center", 
   },
   searchBarContainer: {
     flexDirection: "row",

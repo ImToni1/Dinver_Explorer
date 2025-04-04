@@ -1,30 +1,30 @@
 import api from './api';
 import { GoogleAuthProvider, signInWithCredential } from 'firebase/auth';
 import * as Google from 'expo-auth-session/providers/google';
-import { auth } from './firebaseConfig'; // Ispravljena putanja
+import { auth } from './firebaseConfig'; 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const register = async (data: { email: string; firstName: string; lastName: string; password: string }) => {
   try {
-    console.log('Register data:', data); // Ispis podataka za registraciju
+    console.log('Register data:', data); 
     const response = await api.post('/auth/register', data);
     return response.data;
   } catch (error) {
-    const err = error as any; // Cast error to any
-    console.error('Register error:', err.response?.data || err.message); // Ispis greške
+    const err = error as any; 
+    console.error('Register error:', err.response?.data || err.message); 
     throw error;
   }
 };
 
 export const login = async (data: { email: string; password: string }) => {
   try {
-    console.log('Login data:', data); // Ispis podataka za prijavu
+    console.log('Login data:', data); 
     const response = await api.post('/auth/login', data);
-    console.log('Login response:', response.data); // Ispis odgovora
+    console.log('Login response:', response.data); 
     return response.data;
   } catch (error) {
-    const err = error as any; // Cast error to any
-    console.error('Login error:', err.response?.data || err.message); // Ispis greške
+    const err = error as any; 
+    console.error('Login error:', err.response?.data || err.message); 
     throw error;
   }
 };

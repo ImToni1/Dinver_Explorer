@@ -1,4 +1,3 @@
-// filepath: c:\Users\tjela\Desktop\Pokusaj dva\Zadatak\src\navigation\BottomTabs.tsx
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/HomeScreen';
@@ -10,7 +9,7 @@ import { useTheme } from '../context/ThemeContext';
 const Tab = createBottomTabNavigator();
 
 const BottomTabs = () => {
-  const { isDarkMode } = useTheme(); // Koristi ThemeContext za tamni mod
+  const { isDarkMode } = useTheme(); 
 
   return (
     <Tab.Navigator
