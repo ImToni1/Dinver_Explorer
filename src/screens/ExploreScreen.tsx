@@ -90,15 +90,20 @@ const RestaurantList: React.FC = () => {
                   <Text style={[styles.addressText, { color: isDarkMode ? "#eee" : "#555" }]}>{address}</Text>
                 </TouchableOpacity>
               </View>
+              <TouchableOpacity>
+                <MaterialIcons name="map" size={27} color={isDarkMode ? "#bbb" : "#000"} style={styles.mapIcon} />
+              </TouchableOpacity>
             </>
           ) : (
-            <TouchableOpacity onPress={handleAddressChange} style={styles.addressContainerCentered}>
-              <Text style={[styles.addressText, { color: isDarkMode ? "#eee" : "#555" }]}>{address}</Text>
-            </TouchableOpacity>
+            <View style={styles.addressContainer}>
+              <TouchableOpacity onPress={handleAddressChange}>
+                <Text style={[styles.addressText, { color: isDarkMode ? "#eee" : "#555" }]}>{address}</Text>
+              </TouchableOpacity>
+              <TouchableOpacity>
+                <MaterialIcons name="map" size={27} color={isDarkMode ? "#bbb" : "#000"} style={styles.mapIcon} />
+              </TouchableOpacity>
+            </View>
           )}
-          <TouchableOpacity>
-            <MaterialIcons name="map" size={27} color={isDarkMode ? "#bbb" : "#000"} style={styles.mapIcon} />
-          </TouchableOpacity>
         </View>
       </View>
 
@@ -199,12 +204,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     width: "100%",
   },
-  profileRowCentered: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    width: "100%",
-  },
   profileImage: {
     width: 60,
     height: 60,
@@ -213,15 +212,16 @@ const styles = StyleSheet.create({
   },
   profileDetails: {
     flex: 1,
+    justifyContent: "center",
   },
   profileText: {
     fontSize: 16,
     fontWeight: "bold",
+    marginBottom: 5,
   },
   addressText: {
-    fontSize: 16,
-    marginBottom: 0,
-    
+    fontSize: 14,
+    textAlign: "left",
   },
   mapIcon: {
     marginLeft: 10,
@@ -229,12 +229,9 @@ const styles = StyleSheet.create({
   addressContainer: {
     flexDirection: "row",
     alignItems: "center",
-    marginTop: 5,
-  },
-  addressContainerCentered: {
-    flex: 1,
-    alignItems: "center", 
-    justifyContent: "center", 
+    justifyContent: "space-between",
+    width: "100%",
+    paddingHorizontal: 10,
   },
   searchBarContainer: {
     flexDirection: "row",
